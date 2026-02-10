@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="referrer" content="no-referrer" />
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <link rel="shortcut icon" id="tab-favicon" href="favicon.png" />
+    <title id="t">Movies & Anime</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/global.css?v=6" />
+    <link rel="stylesheet" href="/assets/css/container.css?v=2" />
+    <link rel="stylesheet" href="/assets/css/nav.css?v=01" />
+    <script src="/assets/js/index-3.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6840529569014734"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="f-nav"></div>
+    <div class="input-c">
+        <input type="text" id="search" onkeyup="bar()" placeholder="Search" />
+        <select id="category" name="category" onchange="category()">
+            <option value="all">&#65;&#108;&#108;</option>
+            <option value="movies">&#77;&#111;&#118;&#105;&#101;&#115;</option>
+            <option value="anime">&#65;&#110;&#105;&#109;&#101;</option>
+            <option value="series">&#84;&#86;&#32;&#83;&#101;&#114;&#105;&#101;&#115;</option>
+            <option value="dubbed">&#68;&#117;&#98;&#98;&#101;&#100;</option>
+            <option value="subbed">&#83;&#117;&#98;&#98;&#101;&#100;</option>
+            <option value="services">&#83;&#101;&#114;&#118;&#105;&#99;&#101;&#115;</option>
+            <option value="recordings">&#82;&#101;&#99;&#111;&#114;&#100;&#105;&#110;&#103;&#115;</option>
+        </select>
+        <button onclick="googleSearch()"
+            style="background:#4285f4;color:white;border:none;padding:8px 16px;border-radius:4px;cursor:pointer;margin-left:5px;">🔍
+            Google Search</button>
+        <a href="https://google.com" target="_blank"
+            style="background:#ea4335;color:white;border:none;padding:8px 16px;border-radius:4px;cursor:pointer;margin-left:5px;text-decoration:none;display:inline-block;">Google</a>
+    </div>
+    <div class="pinned"></div>
+    <div class="apps"></div>
+    <div id="googleProxy" style="display:none;margin:20px;padding:20px;background:#f0f0f0;border-radius:8px;">
+        <h3>🌐 Google Proxy Access</h3>
+        <p>If anime sites are blocked, try accessing through Google Translate:</p>
+        <button onclick="openGoogleTranslateProxy('https://animekai.to/home')"
+            style="background:#4285f4;color:white;border:none;padding:10px 20px;border-radius:4px;cursor:pointer;margin:5px;">AnimeKai
+            via Proxy</button>
+        <button onclick="openGoogleTranslateProxy('https://aniwatchtv.to/home')"
+            style="background:#4285f4;color:white;border:none;padding:10px 20px;border-radius:4px;cursor:pointer;margin:5px;">AniWatch
+            TV via Proxy</button>
+        <button onclick="toggleGoogleProxy()"
+            style="background:#999;color:white;border:none;padding:10px 20px;border-radius:4px;cursor:pointer;margin-left:10px;">Hide</button>
+    </div>
+    <script src="/assets/js/c1.js?v=001"></script>
+    <script src="./assets/mathematics/bundle.js?v=2025-04-15"></script>
+    <script src="./assets/mathematics/config.js?v=2025-04-15"></script>
+    <script src="/assets/js/m1.js"></script>
+    <script>
+        function googleSearch() {
+            const searchTerm = document.getElementById('search').value || 'best anime websites';
+            window.open(`https://www.google.com/search?q=${encodeURIComponent(searchTerm + ' anime streaming')}`, '_blank');
+        }
+
+        function openGoogleTranslateProxy(url) {
+            const proxyUrl = `https://translate.google.com/translate?u=${encodeURIComponent(url)}`;
+            window.open(proxyUrl, '_blank');
+        }
+
+        function toggleGoogleProxy() {
+            const proxy = document.getElementById('googleProxy');
+            proxy.style.display = proxy.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Show proxy option if sites are blocked
+        window.addEventListener('load', function () {
+            fetch('https://animekai.to/home', { mode: 'no-cors' }).catch(() => {
+                document.getElementById('googleProxy').style.display = 'block';
+            });
+        });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKJQ5QHQTJ"></script>
+    <!-- DO NOT REMOVE-->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-WKJQ5QHQTJ");
+    </script>
+    <!-- DO NOT REMOVE-->
+</body>
+
+</html>

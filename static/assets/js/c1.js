@@ -3,6 +3,7 @@ let appInd;
 const g = window.location.pathname === "/a";
 const a = window.location.pathname === "/b";
 const c = window.location.pathname === "/gt";
+const ma = window.location.pathname === "/ma";
 
 let t;
 
@@ -242,11 +243,16 @@ if (g) {
   path = "/assets/json/g.min.json";
 } else if (c) {
   path = "/assets/json/t.min.json";
+} else if (ma) {
+  path = "/assets/json/ma.min.json";
 } else if (a) {
   path = "/assets/json/a.min.json";
 }
 fetch(path)
   .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   })
   .then(appsList => {
